@@ -34,11 +34,11 @@ public class User implements UserDetails {
 
     @ManyToMany
     @JoinTable(
-            name="users_titles",
+            name="users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "title_id")
+            inverseJoinColumns = @JoinColumn(name = "rol_id")
     )
-    private Set<Title> titles = new HashSet<>();
+    private Set<Rol> roles = new HashSet<>();
 
     @CreationTimestamp
     @Column(updatable = false, name = "created_at")
